@@ -13,4 +13,6 @@ print "There will be", cars_not_driven, "empty cars today."
 print "We have", passengers, "to carpool today."
 print "We need to put about", average_passengers_per_car, "in each car."
 
+print "Hey %s there." % "you"
+
 # The cause of the error is that the variable name car_pool_capacity is undefined, it should have been carpool_capacity instead 
