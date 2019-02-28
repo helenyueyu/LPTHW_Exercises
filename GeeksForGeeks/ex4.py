@@ -10,15 +10,18 @@ turn = 0;
 while (your_health > 0 and opp_health > 0):
   turn += 1;
   if turn % 2 != 0:
-    attack = random.randint(1,10)
-    opp_health = opp_health - attack 
-    print("Your health is: " + str(your_health))
-    print("Your opponent's health is: " + str(opp_health))
+    choice = raw_input("Press enter to attack.")
+    if choice == "":
+      your_attack = random.randint(1,10)
+      opp_health -= your_attack
+      print("You inflicted " + str(your_attack) + " damage! Your opponent's health is: " + str(opp_health))
+    else: 
+      print("You ran away!")
+      break
   else:
-    attack = random.randint(1,10)
-    your_health = your_health - attack 
-    print("Your health is: " + str(your_health))
-    print("Your opponent's health is: " + str(opp_health))
+    opp_attack = random.randint(1,10)
+    your_health -= opp_attack
+    print("Your opponent inflicted " + str(opp_attack) + " damage! Your health is: " + str(your_health))
 
 if your_health < 0:
   print("You lose!")
